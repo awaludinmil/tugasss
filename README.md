@@ -1,4 +1,4 @@
-# 📊 Modern Dashboard
+# 📊 Modern Dashboard - Tugas
 
 Dashboard modern yang sederhana namun elegan, dibangun dengan Next.js 14, TypeScript, dan Tailwind CSS. Perfect untuk aplikasi bisnis, admin panel, atau monitoring sistem.
 
@@ -38,8 +38,8 @@ Dashboard modern yang sederhana namun elegan, dibangun dengan Next.js 14, TypeSc
 
 1. **Clone repository**
 ```bash
-git clone https://github.com/yourusername/modern-dashboard.git
-cd modern-dashboard
+git clone https://github.com/awaludinmil/tugasss.git
+cd tugasss
 ```
 
 2. **Install dependencies**
@@ -64,7 +64,7 @@ http://localhost:3000
 ## 📁 Struktur Project
 
 ```
-modern-dashboard/
+tugasss/
 ├── 📁 app/                          # Next.js App Router
 │   ├── 📄 globals.css              # Global styles & Tailwind imports
 │   ├── 📄 layout.tsx               # Root layout component
@@ -235,9 +235,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## 📞 Contact
 
-**Your Name** - [@yourusername](https://github.com/yourusername) - your.email@example.com
+**Awaludin** - [@awaludinmil](https://github.com/awaludinmil) - awaludinmil@example.com
 
-Project Link: [https://github.com/yourusername/modern-dashboard](https://github.com/yourusername/modern-dashboard)
+Project Link: [https://github.com/awaludinmil/tugasss](https://github.com/awaludinmil/tugasss)
 
 ## 🙏 Acknowledgments
 
