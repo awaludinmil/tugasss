@@ -1,6 +1,6 @@
-# 📊 Modern Dashboard - Tugas
+# 📊 React Dashboard - Tugas
 
-Dashboard modern yang sederhana namun elegan, dibangun dengan Next.js 14, TypeScript, dan Tailwind CSS. Perfect untuk aplikasi bisnis, admin panel, atau monitoring sistem.
+Dashboard modern yang sederhana namun elegan, dibangun dengan React.js, Vite, dan Tailwind CSS. Perfect untuk aplikasi bisnis, admin panel, atau monitoring sistem.
 
 ![Dashboard Preview](https://via.placeholder.com/800x400/3b82f6/ffffff?text=Modern+Dashboard+Preview)
 
@@ -9,7 +9,7 @@ Dashboard modern yang sederhana namun elegan, dibangun dengan Next.js 14, TypeSc
 - 🎨 **UI Modern & Clean** - Desain yang minimalis dan profesional
 - 📱 **Fully Responsive** - Optimal di semua device (mobile, tablet, desktop)
 - 📊 **Interactive Charts** - Grafik interaktif dengan Recharts
-- 🚀 **Next.js 14** - Menggunakan App Router terbaru
+- ⚡ **Vite** - Build tool yang cepat dan modern
 - 💨 **Tailwind CSS** - Styling yang cepat dan konsisten
 - 📈 **Real-time Data** - Visualisasi data real-time
 - 🎯 **Quick Actions** - Tombol shortcut untuk aksi cepat
@@ -21,8 +21,8 @@ Dashboard modern yang sederhana namun elegan, dibangun dengan Next.js 14, TypeSc
 
 | Technology | Version | Purpose |
 |------------|---------|---------|
-| **Next.js** | 14.0.0 | React Framework |
-| **TypeScript** | 5.2.2 | Type Safety |
+| **React** | 18.2.0 | UI Library |
+| **Vite** | 4.5.0 | Build Tool |
 | **Tailwind CSS** | 3.3.5 | Styling |
 | **Recharts** | 2.8.0 | Data Visualization |
 | **Lucide React** | 0.294.0 | Icons |
@@ -65,35 +65,30 @@ http://localhost:3000
 
 ```
 tugasss/
-├── 📁 app/                          # Next.js App Router
-│   ├── 📄 globals.css              # Global styles & Tailwind imports
-│   ├── 📄 layout.tsx               # Root layout component
-│   └── 📄 page.tsx                 # Main dashboard page
-├── 📁 components/                   # Reusable components
-│   ├── 📄 ChartCard.tsx            # Revenue chart component
-│   ├── 📄 QuickActions.tsx         # Quick action buttons
-│   ├── 📄 RecentActivity.tsx       # Activity feed component
-│   └── 📄 StatsCard.tsx            # Statistics card component
-├── 📄 package.json                 # Dependencies & scripts
-├── 📄 next.config.js               # Next.js configuration
-├── 📄 tailwind.config.js           # Tailwind CSS configuration
-├── 📄 postcss.config.js            # PostCSS configuration
-├── 📄 tsconfig.json                # TypeScript configuration
-└── 📄 README.md                    # Project documentation
+├── 📁 src/                          # Source code
+│   ├── 📁 components/               # React components
+│   │   ├── 📄 ChartCard.jsx         # Revenue chart component
+│   │   ├── 📄 QuickActions.jsx      # Quick action buttons
+│   │   ├── 📄 RecentActivity.jsx   # Activity feed component
+│   │   └── 📄 StatsCard.jsx        # Statistics card component
+│   ├── 📄 App.jsx                   # Main App component
+│   ├── 📄 main.jsx                  # Entry point
+│   └── 📄 index.css                 # Global styles & Tailwind imports
+├── 📄 index.html                    # HTML template
+├── 📄 package.json                  # Dependencies & scripts
+├── 📄 vite.config.js                # Vite configuration
+├── 📄 tailwind.config.js            # Tailwind CSS configuration
+├── 📄 postcss.config.js             # PostCSS configuration
+└── 📄 README.md                     # Project documentation
 ```
 
 ## 🧩 Komponen Detail
 
 ### 📊 StatsCard Component
-```typescript
-// components/StatsCard.tsx
-interface StatsCardProps {
-  title: string        // Judul metric (e.g., "Total Revenue")
-  value: string        // Nilai utama (e.g., "$45,231")
-  change: string       // Perubahan (e.g., "+20.1%")
-  changeType: 'positive' | 'negative'  // Tipe perubahan
-  icon: LucideIcon     // Icon dari Lucide React
-  color: string        // Warna background icon
+```jsx
+// src/components/StatsCard.jsx
+const StatsCard = ({ title, value, change, changeType, icon: Icon, color }) => {
+  // Component implementation
 }
 ```
 
@@ -104,8 +99,8 @@ interface StatsCardProps {
 - Responsive design
 
 ### 📈 ChartCard Component
-```typescript
-// components/ChartCard.tsx
+```jsx
+// src/components/ChartCard.jsx
 // Menggunakan Recharts untuk visualisasi data
 ```
 
@@ -117,8 +112,8 @@ interface StatsCardProps {
 - Data sample yang realistis
 
 ### 🎯 QuickActions Component
-```typescript
-// components/QuickActions.tsx
+```jsx
+// src/components/QuickActions.jsx
 // Grid 2x3 untuk tombol aksi cepat
 ```
 
@@ -131,8 +126,8 @@ interface StatsCardProps {
 - 👁️ Preview
 
 ### 📱 RecentActivity Component
-```typescript
-// components/RecentActivity.tsx
+```jsx
+// src/components/RecentActivity.jsx
 // Feed aktivitas real-time
 ```
 
@@ -161,14 +156,14 @@ theme: {
 ```
 
 ### Menambah Data Sample
-Edit data di `app/page.tsx`:
-```typescript
+Edit data di `src/App.jsx`:
+```jsx
 const stats = [
   {
     title: 'Your Metric',
     value: 'Your Value',
     change: '+10%',
-    changeType: 'positive' as const,
+    changeType: 'positive',
     icon: YourIcon,
     color: 'bg-your-color'
   }
@@ -176,8 +171,8 @@ const stats = [
 ```
 
 ### Mengubah Chart Data
-Edit data di `components/ChartCard.tsx`:
-```typescript
+Edit data di `src/components/ChartCard.jsx`:
+```jsx
 const data = [
   { name: 'Jan', revenue: 4000, users: 2400 },
   // Tambah data sesuai kebutuhan
@@ -195,9 +190,9 @@ Dashboard ini fully responsive dengan breakpoints:
 ## 🔧 Available Scripts
 
 ```bash
-npm run dev      # Development server
+npm run dev      # Development server (Vite)
 npm run build    # Production build
-npm run start    # Production server
+npm run preview  # Preview production build
 npm run lint     # ESLint check
 ```
 
@@ -216,10 +211,10 @@ npm run lint     # ESLint check
 - High contrast color scheme
 
 ### Performance
-- Next.js 14 optimizations
-- Image optimization
+- Vite fast build & HMR
 - Code splitting
-- Lazy loading components
+- Tree shaking
+- Optimized bundle size
 
 ## 🤝 Contributing
 
@@ -241,7 +236,8 @@ Project Link: [https://github.com/awaludinmil/tugasss](https://github.com/awalud
 
 ## 🙏 Acknowledgments
 
-- [Next.js](https://nextjs.org/) - The React Framework
+- [React](https://reactjs.org/) - The UI Library
+- [Vite](https://vitejs.dev/) - Fast build tool
 - [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
 - [Recharts](https://recharts.org/) - Composable charting library
 - [Lucide](https://lucide.dev/) - Beautiful & consistent icon toolkit

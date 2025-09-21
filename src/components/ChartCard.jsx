@@ -1,6 +1,5 @@
-'use client'
-
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, LineChart, Line } from 'recharts'
+import React from 'react'
+import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 
 const data = [
   { name: 'Jan', revenue: 4000, users: 2400 },
@@ -12,7 +11,7 @@ const data = [
   { name: 'Jul', revenue: 3490, users: 4300 },
 ]
 
-export default function ChartCard() {
+const ChartCard = () => {
   return (
     <div className="card">
       <div className="flex items-center justify-between mb-6">
@@ -76,3 +75,5 @@ export default function ChartCard() {
     </div>
   )
 }
+
+export default ChartCard

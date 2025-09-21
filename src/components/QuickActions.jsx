@@ -1,5 +1,4 @@
-'use client'
-
+import React from 'react'
 import { Plus, Download, Upload, Settings, Eye, BarChart3 } from 'lucide-react'
 
 const actions = [
@@ -41,7 +40,7 @@ const actions = [
   }
 ]
 
-export default function QuickActions() {
+const QuickActions = () => {
   return (
     <div className="card">
       <h3 className="text-lg font-semibold text-gray-900 mb-4">Quick Actions</h3>
@@ -64,3 +63,5 @@ export default function QuickActions() {
     </div>
   )
 }
+
+export default QuickActions

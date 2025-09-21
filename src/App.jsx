@@ -1,6 +1,4 @@
-'use client'
-
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { 
   BarChart3, 
   Users, 
@@ -15,12 +13,12 @@ import {
   Eye,
   Download
 } from 'lucide-react'
-import StatsCard from '@/components/StatsCard'
-import ChartCard from '@/components/ChartCard'
-import RecentActivity from '@/components/RecentActivity'
-import QuickActions from '@/components/QuickActions'
+import StatsCard from './components/StatsCard'
+import ChartCard from './components/ChartCard'
+import RecentActivity from './components/RecentActivity'
+import QuickActions from './components/QuickActions'
 
-export default function Dashboard() {
+function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false)
 
   const stats = [
@@ -28,7 +26,7 @@ export default function Dashboard() {
       title: 'Total Revenue',
       value: '$45,231',
       change: '+20.1%',
-      changeType: 'positive' as const,
+      changeType: 'positive',
       icon: DollarSign,
       color: 'bg-green-500'
     },
@@ -36,7 +34,7 @@ export default function Dashboard() {
       title: 'Active Users',
       value: '2,350',
       change: '+15.3%',
-      changeType: 'positive' as const,
+      changeType: 'positive',
       icon: Users,
       color: 'bg-blue-500'
     },
@@ -44,7 +42,7 @@ export default function Dashboard() {
       title: 'Orders',
       value: '1,234',
       change: '+8.2%',
-      changeType: 'positive' as const,
+      changeType: 'positive',
       icon: ShoppingCart,
       color: 'bg-purple-500'
     },
@@ -52,7 +50,7 @@ export default function Dashboard() {
       title: 'Conversion Rate',
       value: '3.2%',
       change: '-2.1%',
-      changeType: 'negative' as const,
+      changeType: 'negative',
       icon: TrendingUp,
       color: 'bg-orange-500'
     }
@@ -231,3 +229,5 @@ export default function Dashboard() {
     </div>
   )
 }
+
+export default App

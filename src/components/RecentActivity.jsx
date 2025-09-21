@@ -1,5 +1,4 @@
-'use client'
-
+import React from 'react'
 import { Activity, User, ShoppingCart, DollarSign } from 'lucide-react'
 
 const activities = [
@@ -45,7 +44,7 @@ const activities = [
   }
 ]
 
-export default function RecentActivity() {
+const RecentActivity = () => {
   return (
     <div className="card">
       <div className="flex items-center justify-between mb-4">
@@ -74,3 +73,5 @@ export default function RecentActivity() {
     </div>
   )
 }
+
+export default RecentActivity

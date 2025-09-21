@@ -1,17 +1,6 @@
-'use client'
+import React from 'react'
 
-import { LucideIcon } from 'lucide-react'
-
-interface StatsCardProps {
-  title: string
-  value: string
-  change: string
-  changeType: 'positive' | 'negative'
-  icon: LucideIcon
-  color: string
-}
-
-export default function StatsCard({ title, value, change, changeType, icon: Icon, color }: StatsCardProps) {
+const StatsCard = ({ title, value, change, changeType, icon: Icon, color }) => {
   return (
     <div className="card card-hover">
       <div className="flex items-center justify-between">
@@ -34,3 +23,5 @@ export default function StatsCard({ title, value, change, changeType, icon: Icon
     </div>
   )
 }
+
+export default StatsCard
